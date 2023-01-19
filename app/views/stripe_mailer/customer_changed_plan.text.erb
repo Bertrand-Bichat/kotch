@@ -1,0 +1,11 @@
+Félicitations <%= @user.first_name.capitalize %> !
+
+Tu viens de souscrire à l’abonnement te permettant de réserver jusqu’à <%= @user.subscription.nickname %>.
+
+Commence dès maintenant à planifier tes séances !
+
+<%= link_to "Réserve ta séance", new_lesson_url %>
+
+Tu peux également faire bénéficier tes amis d'une séance gratuite chacun en leur partageant ton code de parrainage : <%= @user.referral_code %>
+
+À très vite

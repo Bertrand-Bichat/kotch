@@ -1,0 +1,97 @@
+<div class="container text-center">
+
+  <h2 class="mt-5 mb-3">SÉLECTIONNEZ L’ABONNEMENT QUI VOUS CONVIENT</h2>
+  <% if @prices_and_sessions[0][:percentage] %>
+    <h3 class="mb-5 text-blue">Vous avez le droit à une réduction de <%= @prices_and_sessions[0][:percentage] %>% grâce à votre entreprise (inclue dans les prix affichés ci-dessous)</h3>
+  <% end %>
+
+  <% if user_signed_in? && current_user.subscription && current_user.subscription.stripe_id %>
+
+    <h3 class="text-blue"> Vous avez déjà souscrit à un abonnement Koach, cliquez ci-dessous pour gérer votre abonnement.</h3>
+
+    <form action="/customer_portal_sessions" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <button class="btn btn-kotch btn-red mb-5">Gérer mon abonnement</button>
+    </form>
+
+    <%= render 'static_offers_subscription' %>
+
+  <% else %>
+
+    <div class="card-offer-container justify-content-between mt-5">
+      <% @prices_and_sessions.each do |ps| %>
+        <div class="card-offer">
+          <div class="offer-content">
+            <h3><%= ps[:name] %></h3>
+            <span><u>sans engagement</u></span>
+            <p class="btn-kotch btn-white btn-white-offer mt-4 mb-2"><%= ps[:discounted_price] %> / MOIS</p>
+            <div class="d-flex justify-content-center align-items-center w-100 text-white text-left">
+              <input id="cgv" name="cgv" type="checkbox" class="mb-2 checkbox-<%= ps[:checkout_id] %>"></input>
+              <label for="cgv" class="ml-2 mb-2">J'accèpte les <%= link_to "CGV", cgv_path, target: "_blank", rel: "noopener noreferrer", class: "font-weight-bold" %></label>
+            </div>
+            <p class="text-red border-red bg-white my-2 p-1 hidden cgv-text-<%= ps[:checkout_id] %>">Veuillez accepter les conditions générales de ventes pour passer au paiement.</p>
+            <button class="btn btn-kotch btn-red btn-red-offer checkout-button" role="link" data-session-id="<%= ps[:checkout_id] %>">
+                  CHOISIR
+            </button>
+          </div>
+          <%= image_tag ps[:image], loading: 'lazy', class: "offer-img-sm" %>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <h2 class="my-3 my-lg-5 py-0 py-lg-5" id="lessons-individually">OU BIEN PROFITEZ DE SÉANCES À L’UNITÉ</h2>
+
+  <div class="card-offer-container justify-content-around">
+    <div class="card-offer card-offer-lightblue">
+      <div class="offer-content">
+        <h3>Carte 1 séance</h3>
+        <span><u>valable 6 mois</u></span>
+        <p class="btn-kotch btn-white btn-white-offer my-4">15€</p>
+        <%= link_to 'CHOISIR', pack_orders_path(pack_number: 1), method: :post, class: "btn btn-kotch btn-red btn-red-offer" %>
+      </div>
+      <%= image_tag 'homme_choisissant_son_abonnement_de_sport.png', alt: "Un homme choisissant son abonnement de sport", loading: 'lazy', class: "offer-img-bg" %>
+    </div>
+
+    <div class="card-offer card-offer-lightblue">
+      <div class="offer-content">
+        <h3>Carte 10 séances</h3>
+        <span><u>valable 6 mois</u></span>
+        <p class="btn-kotch btn-white btn-white-offer my-4">120€</p>
+        <%= link_to 'CHOISIR', pack_orders_path(pack_number: 0), method: :post, class: "btn btn-kotch btn-red btn-red-offer" %>
+      </div>
+      <%= image_tag 'femme_choisissant_son_abonnement_de_sport.png', alt: "Une femme choisissant son abonnement de sport", loading: 'lazy', class: "offer-img-bg" %>
+    </div>
+  </div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const checkoutButtons = document.querySelectorAll('.checkout-button');
+
+  checkoutButtons.forEach(checkoutButton => {
+    checkoutButton.addEventListener('click', function () {
+      const sessionID = checkoutButton.dataset.sessionId;
+      const checkboxInpout = document.querySelector(`.checkbox-${sessionID}`);
+      const cgvText = document.querySelector(`.cgv-text-${sessionID}`);
+
+      if (checkboxInpout.checked === false) {
+        cgvText.classList.remove('hidden');
+      } else {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: sessionID
+        })
+        .then(function (result) {
+          if (result.error) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer.
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
+      }
+    });
+  });
+</script>

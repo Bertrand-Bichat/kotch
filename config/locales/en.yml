@@ -1,0 +1,130 @@
+en:
+  activerecord:
+    models:
+      users:
+        attributes:
+          optin_cgv:
+            blank: "Vous devez accepter les CGV pour utiliser Koach and Co."
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      long: "%e %B %Y"
+      short: "%e %b"
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+  hello: "Hello world"
+  gender:
+    homme: Homme
+    femme: Femme
+    autres: Autres
+  sport_habits:
+    regularly: Régulières
+    occasionnally: Occasionnelles
+    rarely: Rares
+  physical_pain:
+    oui: oui
+    non: non
+    pain_regular: régulières
+    pain_occasionnal: occasionnelles
+    pain_rare: rares
+  level:
+    inexperimente: inexpérimenté – l’activité physique ne fait pas partie de mon quotidien
+    occasionnel: occasionnel – je fais de l’exercice de temps en temps
+    regulier: régulier – au moins deux fois par semaine
+    inconditionnel: inconditionnel – j’ai une activité physique la plupart des jours de la semaine
+    athlete: athlète – rien ne m’arrête
+  intensity:
+    intense: L’intensité
+    endurance: Améliorer mon endurance et mes capacités respiratoires
+    fun: Prendre du bon temps et m’amuser
+    learn: Apprendre et améliorer ma technique
+  expectations:
+    relax: Se détendre
+    letgo: Se défouler
+    amuse: S'amuser
+    weight_loss: Perdre du poids
+    muscle: Se muscler
+    healthy: Améliorer votre santé
+    unstress: Réduire mon stress et renforcer ma concentration
+    tonification: Se tonifier
+  company_discover:
+    internet: Internet
+    your_company: Votre entreprise
+    social_networks: Réseaux sociaux
+    word_of_mouth: Bouche-à-oreille
+    other: Autres campagnes de communication
+  reccurencies:
+    not_reccurent: Non
+    weekly: Oui
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+

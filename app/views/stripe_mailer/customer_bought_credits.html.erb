@@ -1,0 +1,11 @@
+<p class="mb-3">Félicitations <%= @user.first_name.capitalize %> !</p>
+
+<p>Tu viens d’acheter <%= @pack_order.credit_count %> séance(s) de sport Koach & Co.</p>
+
+<p>A compter d’aujourd’hui, tu as 6 mois pour l’utiliser. Réserve rapidement ta séance idéale !</p>
+
+<p><%= link_to "Réserve ta séance", new_lesson_url, class:'btn-red', target:'_blank', rel:'noopener noreferrer' %></p>
+
+<p>Tu peux également faire bénéficier tes amis d'une séance gratuite chacun en leur partageant ton code de parrainage : <b><%= @user.referral_code %></b></p>
+
+<p class="mt-5">À très vite </p>

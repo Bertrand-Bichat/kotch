@@ -1,0 +1,38 @@
+.card-offer-container {
+  display: flex;
+  a {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .card-offer-container {
+    flex-direction: column;
+    position: relative;
+
+    .card-offer {
+      margin: 2em auto;
+    }
+  }
+}
+
+.card-offer-container-enterprise {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px){
+  .card-offer-container-enterprise {
+    flex-direction: column;
+    position: relative;
+
+    .card-offer-enterprise {
+      margin: 2em auto;
+    }
+  }
+}
+
+@media screen and (max-width: 992px){
+  .offer-enterprise-reduction {
+    font-size: 1.25rem;
+  }
+}

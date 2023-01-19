@@ -1,0 +1,19 @@
+.alert {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.alert-info {
+  color: $blue-kotch;
+  background-color: $light-blue-kotch;
+  border: none;
+}
+
+.alert-warning {
+  color: $coral-kotch;
+  background-color: #f9d8d6;
+  border: none;
+}

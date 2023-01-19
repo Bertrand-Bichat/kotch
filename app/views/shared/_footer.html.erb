@@ -1,0 +1,29 @@
+<footer>
+  <div class="italic">
+    <div class="d-flex justify-content-center align-items-center">
+      <p>
+        <%= link_to "A propos", about_path, class:'footer-link mx-0 mx-md-2'%> /
+        <%= link_to "FAQ", faq_path, class:'footer-link mx-0 mx-md-2'%> /
+        <%= link_to "Forum", forum_path, class:'footer-link mx-0 mx-md-2'%> /
+        <a href="mailto:contact@koachandco.com" class="footer-link mx-0 mx-md-2">Contact</a> /
+        <% unless user_signed_in? || (request.fullpath == '/inscription-entreprise') || @enterprise_signup.present? %>
+          <%= link_to "Je suis coach", coach_sign_up_path, class:'footer-link mx-0 mx-md-2'%> /
+          <%= link_to "Je suis une entreprise", enterprise_sign_up_path, class:'footer-link mx-0 mx-md-2'%> /
+        <% end %>
+        <%= link_to "Mentions légales", legals_path, class:'footer-link mx-0 mx-md-2'%> /
+        <% if current_user&.enterprise? || (request.fullpath == '/inscription-entreprise') || @enterprise_signup.present? %>
+          <%= link_to 'CGU', cgu_path(enterprise_signup: true), class:'footer-link mx-0 mx-md-2' %>
+        <% else %>
+          <%= link_to 'CGV', cgv_path, class:'footer-link mx-0 mx-md-2' %>
+        <% end %>
+      </p>
+    </div>
+    <div class="text-center mt-2">
+      <p class="footer-social-title">rejoignez nous sur les réseaux sociaux</p>
+      <div class="d-flex justify-content-center mb-3">
+        <a href="https://instagram.com/koachandco?utm_medium=copy_link", target="_blank", rel="noopener noreferrer", class="mr-3"><%= image_tag 'instagram.png', width: 50, alt: 'logo Instagram' %></a>
+        <a href="https://www.facebook.com/profile.php?id=100060081436490", target="_blank", rel="noopener noreferrer"><%= image_tag 'facebook.png', width: 50, alt: 'logo Facebook' %></a>
+      </div>
+    </div>
+  </div>
+</footer>

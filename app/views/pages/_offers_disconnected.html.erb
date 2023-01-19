@@ -1,0 +1,30 @@
+<div class="container text-center">
+  <h2 class="my-5">SÉLECTIONNEZ L’ABONNEMENT QUI VOUS CONVIENT</h2>
+
+
+  <%= render 'static_offers_subscription' %>
+
+  <h2 class="my-3 my-lg-5 py-0 py-lg-5" id="lessons-individually">OU BIEN PROFITEZ DE SÉANCES À L’UNITÉ</h2>
+
+  <div class="card-offer-container justify-content-around">
+    <div class="card-offer card-offer-lightblue">
+      <div class="offer-content">
+        <h3>Carte 1 séance</h3>
+        <span><u>valable 6 mois</u></span>
+        <p class="btn-kotch btn-white btn-white-offer my-4">15€</p>
+        <%= link_to 'CHOISIR', new_user_registration_path, class: "btn btn-kotch btn-red btn-red-offer" %>
+      </div>
+      <%= image_tag 'homme_choisissant_son_abonnement_de_sport.png', alt: "Un homme choisissant son abonnement de sport", loading: 'lazy', class: "offer-img-bg" %>
+    </div>
+
+    <div class="card-offer card-offer-lightblue">
+      <div class="offer-content">
+        <h3>Carte 10 séances</h3>
+        <span><u>valable 6 mois</u></span>
+        <p class="btn-kotch btn-white btn-white-offer my-4">120€</p>
+        <%= link_to 'CHOISIR', new_user_registration_path, class: "btn btn-kotch btn-red btn-red-offer" %>
+      </div>
+      <%= image_tag 'femme_choisissant_son_abonnement_de_sport.png', alt: "Une femme choisissant son abonnement de sport", loading: 'lazy', class: "offer-img-bg" %>
+    </div>
+  </div>
+</div>

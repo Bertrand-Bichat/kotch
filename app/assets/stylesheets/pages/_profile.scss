@@ -1,0 +1,201 @@
+.profile-info {
+  position: absolute;
+  bottom: 15px;
+  padding-right: 22px;
+}
+
+.profile-box {
+  height: 82vh;
+
+  .msg {
+    text-decoration: underline;
+  }
+
+  .msg:hover {
+    color: $coral-kotch;
+  }
+}
+
+.profile-box-bg {
+  background-color: #F4F6FF;
+  // background: linear-gradient(90deg, rgba(244,246,255,1) 0%, rgba(219,225,254,1) 100%);
+  background-image: image-url('backgroundblue2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  overflow-y: auto;
+
+  .nav-tabs {
+    border: none !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-box {
+    height: auto;
+  }
+
+  .profile-box-bg {
+    height: 82vh;
+  }
+}
+
+.participants-modal {
+  background-color: $coral-kotch;
+
+  .bullet {
+    font-size: 70px;
+    line-height: 0;
+    margin-left: 10px;
+  }
+
+  span:nth-child(odd) {
+    color: $light-blue-kotch;
+  }
+
+  span:nth-child(even) {
+    color: $blue-kotch;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  h5,
+  li {
+    color: $blue-kotch;
+    font-weight: 600;
+  }
+
+  li,
+  i {
+    font-size: 16px;
+  }
+
+  h3 {
+    color: white;
+    font-weight: 500;
+  }
+
+  p {
+    color: white;
+    margin: auto;
+    letter-spacing: -1.5px;
+  }
+}
+
+.modal-header,
+.modal-content {
+  border: none;
+}
+
+.msg-icon {
+  width: 14px;
+  height: 14px;
+  background-color: $coral-kotch;
+  border-radius: 50%;
+  margin-left: -5px;
+
+  p {
+    font-size: 12px;
+    padding-left: 0.4em;
+    margin-top: -.2em;
+  }
+}
+
+.profil-btn-mobile {
+  width: 100%;
+  color: $white;
+  background-color: $blue-kotch;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px, 0px;
+  border-radius: 5px;
+  border-color: $blue-kotch;
+  box-shadow: none;
+}
+
+#profile-mobile-order {
+  a, input, button {
+    width: 60%;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+#profile-mobile-page {
+  td {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  th {
+    font-size: 1rem;
+  }
+
+  .btn-red {
+    border-radius: 5px;
+    font-weight: 400;
+  }
+
+  .participants-modal  {
+    background-color: $white;
+
+    p {
+      color: $blue-kotch;
+      background-color: $white;
+    }
+
+    span {
+      color: $coral-kotch;
+      background-color: $white;
+    }
+
+    button {
+      i {
+        font-size: 25px;
+        color: $blue-kotch;
+      }
+    }
+  }
+
+  .btn-validate {
+    .fa-check-circle {
+      color: green;
+    }
+
+    .fa-times-circle {
+      color: red;
+    }
+
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .fa-plus-circle {
+    font-size: 22px;
+  }
+
+  #coachings-requests {
+    .fa-plus-circle {
+      color: $light-blue-kotch
+    }
+  }
+
+  #coachings-pasts {
+    .fa-plus-circle {
+      color: $light-blue-kotch
+    }
+  }
+}
+
+#profile-desktop-page {
+  .fa-plus-circle {
+    font-size: 22px;
+  }
+}
+
+#icon-close {
+  font-size: 30px;
+}

@@ -1,0 +1,19 @@
+Bonjour <%= @user.first_name.capitalize %>,
+
+Voici les séances de sport programmées par ton entreprise pour les jours à venir :
+
+<% if @lessons.empty? %>
+  Aucune séance n'est prévue.
+<% else %>
+  <% @lessons.each do |lesson| %>
+    * <%= lesson.sport_type %>, <%= lesson.date.localtime.strftime("le %d/%m/%Y à %k:%M") %> à l'adresse suivante : <%= lesson.location.name %>
+  <% end %>
+<% end %>
+
+Inscris-toi aux séances qui te conviennent.
+
+<%= link_to 'Réserve une séance', employee_enterprise_lessons_url %>
+
+Bonne semaine et pense à apporter ta gourde, ta serviette et ta bonne humeur à chaque séance 😉
+
+À très vite

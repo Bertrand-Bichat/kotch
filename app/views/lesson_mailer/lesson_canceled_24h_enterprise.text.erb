@@ -1,0 +1,13 @@
+Bonjour <%= @user.enterprise_name.capitalize %>,
+
+Nous sommes sincèrement désolés !
+
+Nous avons dû annuler votre réservation car aucun coach n’était disponible pour accompagner vos salariés sur la séance de <%= @lesson.sport_type %> <%= @lesson.date.localtime.strftime("du %d/%m/%Y à %k:%M") %>.
+
+Ne vous inquiétez pas, cette réservation ne vous sera pas décomptée.
+
+Ne perdez pas la forme ! Réservez vite une nouvelle session !
+
+<%= link_to 'Réserver une séance', new_lesson_url %>
+
+À très vite

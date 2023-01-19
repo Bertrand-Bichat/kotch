@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col mb-4 text-condensed">
+      <h5><u><%= link_to "Voir toutes les séances futures", all_lessons_path  %></u></h5>
+      <h5><u><%= link_to "Voir les données", analytics_path  %></u></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h5 class='text-blue'><strong>Gérer les rôles</strong></h5>
+      <div>
+        <%= simple_form_for :user, url: become_admin_path, method: :patch do |f| %>
+            <%= f.input :id, collection: @non_admins, label_method: :full_name, value_method: :id, label: false
+            %>
+            <%= submit_tag "Donner le rôle d'admin à cet utilisateur", class: "btn btn-kotch btn-blue" %>
+        <% end %>
+      </div>
+      <h5 class='mt-4 text-blue'> Utilisateurs avec droits d'administrateur :</h5>
+      <% @admins.each do |user| %>
+        <div class="d-flex">
+          <p class='mb-0 mr-3 text-blue'><%= user.full_name%></p>
+          <%= link_to undo_admin_path(user), method: :patch, data: {confirm: "Etes vous sûre de vouloir enlever les droit d'administrateur à cet utilisateur ?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h5 class='text-blue'><strong>Gérer les coachs</strong></h5>
+      <div>
+        <%= simple_form_for :user, url: coach_validation_path, method: :patch do |f| %>
+            <%= f.input :id, collection: @non_validated_coachs, label_method: :full_name, value_method: :id, label: false
+            %>
+            <%= submit_tag "Valider ce coach", class: "btn btn-kotch btn-blue" %>
+        <% end %>
+      </div>
+      <h5 class='mt-4 text-blue'> Coach validés :</h5>
+      <% @coachs.each do |user| %>
+        <div class="d-flex">
+          <p class='mb-0 mr-3 text-blue'><%= user.full_name%></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h5 class='text-blue'><strong>Gérer les lieux</strong></h5>
+      <div>
+        <%= simple_form_for :location, url: locations_path, method: :post do |f| %>
+            <%= f.input :name, label: 'Nom du lieu' %>
+            <%= hidden_field_tag user_id: current_user.id %>
+            <%= submit_tag "Ajouter ce lieu", class: "btn btn-kotch btn-blue" %>
+        <% end %>
+      </div>
+      <h5 class='mt-4 text-blue'> Tous les lieux :</h5>
+      <% @locations.each do |location| %>
+      <div class="d-flex">
+        <%= link_to location_path(location), method: :delete, data: {confirm: "Etes vous sûre de vouloir supprimer ce lieu ?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <p class='mb-0 ml-2 text-blue'><%= location.name%></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h5 class='text-blue'><strong>Gérer les partenaires</strong></h5>
+      <div>
+        <%= simple_form_for :partner, url: partners_path, method: :post do |f| %>
+            <%= f.input :name, label: "Nom de l'entreprise" %>
+            <%= f.input :domain_name, label: "Nom de domaine de l'entreprise (ex: pour les mails 'hugo@engie.com', prendre 'engie.com')" %>
+            <%= f.input :coupon_code, label: "ID Stripe du coupon" %>
+            <%= f.input :percentage, label: "Pourcentage de réduction" %>
+            <%= submit_tag "Ajouter ce partenaire", class: "btn btn-kotch btn-blue" %>
+        <% end %>
+      </div>
+      <h5 class='mt-4 text-blue'> Tous les partenaires :</h5>
+      <% @partners.each do |partner| %>
+        <p class='mb-0 mr-3 text-blue'>
+          <%= partner.name %> - <%= partner.percentage %>% - code : <%= partner.coupon_code %> -
+          <%= link_to partner_path(partner), method: :delete, data: { confirm: "Etes vous sûre de vouloir supprimer le code entreprise #{partner.name.upcase} ?" } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h5 class='text-blue'><strong>Gérer les codes promo</strong></h5>
+      <div>
+        <%= simple_form_for :promo_code, url: promo_codes_path, method: :post do |f| %>
+          <%= f.input :name, label: "Nom du code", input_html: { class:'text-uppercase' } %>
+          <%= submit_tag "Ajouter ce code", class: "btn btn-kotch btn-blue" %>
+        <% end %>
+      </div>
+      <h5 class='mt-4 text-blue'> Tous les codes promo :</h5>
+      <% @promo_codes.each do |promo_code| %>
+        <p class='mb-0 mr-3 text-blue'>
+          <%= promo_code.name %> - <%= promo_code.active ? 'Actif' : 'Non-actif' %> - utilisé <%= promo_code.uses_count %> fois -
+          <%= link_to toggle_active_status_path(promo_code), method: :patch do %>
+            <%= promo_code.active ? 'Désactiver' : 'Activer' %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+</div>

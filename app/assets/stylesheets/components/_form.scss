@@ -1,0 +1,168 @@
+.form-control {
+  height: 45px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+input#message_content {
+  border-radius:40px;
+}
+
+.form-control::placeholder {
+  color: $medium-gray;
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.form-control[readonly] {
+  background-color: white;
+}
+
+.link-password {
+  font-size: 20px;
+  color: $blue-kotch;
+  font-weight: 300;
+  font-family: 'Barlow Condensed', 'sans-serif';
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.radio_buttons.user_gender, .radio_buttons.user_sport_habits, .radio_buttons.user_physical_pain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection_radio_buttons {
+  color: $blue-kotch;
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.upload-photo {
+  color: $blue-kotch;
+  text-decoration: underline;
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.upload-photo-enterprise {
+  color: $white;
+  text-decoration: none;
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+    color: $blue-kotch;
+}
+
+label.password {
+  color: $blue-kotch;
+}
+
+.input-relative {
+  position: relative;
+}
+
+.submit-icon {
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 40px;
+}
+
+.ap-suggestions {
+  color: #A9A9A9;
+}
+
+.many-emails-input {
+  border-radius: 8px;
+  height: 7rem;
+  border: 1px solid #ced4da;
+  outline: 0;
+  background-color: white;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: left;
+}
+
+@media screen and (max-width: 767px){
+  .many-emails-input {
+    width: 240px !important;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .many-emails-input {
+    width: 100%;
+  }
+}
+
+.many-emails-input-modal {
+  border-radius: 8px;
+  // color: #495057;
+  border: 1px solid #ced4da;
+}
+
+.new-address-input {
+  height: 45px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ced4da;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.cgv {
+  text-decoration: underline;
+}
+
+.sports-description {
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #ced4da;
+  outline: 0;
+  background-color: white;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: left;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 100px){
+  .sports-description {
+    height: 13rem;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .sports-description {
+    height: 25rem;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .sports-description {
+    height: 14rem;
+  }
+}
+
+.input-separator {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.enterprise-signup-form::placeholder {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  font-family: "Barlow Condensed", "sans-serif";
+  color: gray;
+  text-transform: uppercase;
+}

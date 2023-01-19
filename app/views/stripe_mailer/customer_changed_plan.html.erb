@@ -1,0 +1,11 @@
+<p class="mb-3">Félicitations <%= @user.first_name.capitalize %> !</p>
+
+<p>Tu viens de souscrire à l’abonnement te permettant de réserver jusqu’à <%= @user.subscription.nickname %>.</p>
+
+<p>Commence dès maintenant à planifier tes séances !</p>
+
+<p><%= link_to "Réserve ta séance", new_lesson_url, class:'btn-red', target:'_blank', rel:'noopener noreferrer' %></p>
+
+<p>Tu peux également faire bénéficier tes amis d'une séance gratuite chacun en leur partageant ton code de parrainage : <b><%= @user.referral_code %></b></p>
+
+<p class="mt-5">À très vite </p>

@@ -1,0 +1,124 @@
+<div class="p-3">
+  <div class="card-banner-home shadow">
+    <%= image_tag "rond_bleu_claire_min.png", alt: 'rond bleu claire', class:'shape-home d-none d-lg-block' %>
+    <%= image_tag "femme_se_prepare_pour_sa_seance_de_sport.png", alt: "Une femme se prépare pour sa séance de sport", class:'d-block d-lg-none ml-0 ml-lg-5' %>
+    <%= image_tag "femme_se_prepare_pour_sa_seance_de_sport_2.png", alt: "Une femme se prépare pour sa séance de sport", class:'d-none d-lg-block ml-0 ml-lg-5' %>
+    <div class="mt-5 pt-lg-5 d-none d-md-block">
+      <div class="text-center">
+        <h1 class='pt-5 title-banner-home mx-auto'>LE SPORT OÙ ET QUAND VOUS VOULEZ</h1>
+      </div>
+    </div>
+    <h1 class="d-block d-md-none text-center px-4 py-2 title-banner-home-mobile shadow">
+      LE SPORT OÙ ET
+      <br>
+      QUAND VOUS VOULEZ !
+    </h1>
+    <%= link_to "DÉBUTEZ L'EXPÉRIENCE", new_lesson_path, class:"d-none d-lg-block btn btn-kotch btn-blue btn-big first-btn-banner-home"  %>
+    <div class="d-flex justify-content-center">
+    <%= link_to "DÉBUTEZ L'EXPÉRIENCE", new_lesson_path, class:"d-block d-lg-none btn btn-kotch btn-red btn-small-narrow first-btn-banner-home btn-big mt-2"  %>
+    </div>
+    <div class="container d-none d-md-none h-100">
+      <div class="row">
+        <div class="col-12 my-auto">
+          <div class="card-buttons-home p-4">
+            <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+              <div class="form-inputs mb-4">
+                <%= f.input :email,
+                            required: false,
+                            autofocus: true,
+                            label: false,
+                            aria: { label: 'adresse mail' },
+                            placeholder: "Adresse e-mail" %>
+                <%= f.input :password,
+                            required: false,
+                            label: false,
+                            aria: { label: 'mot de passe' },
+                            placeholder: "Mot de passe",
+                            wrapper_html: { class: 'mb-2' } %>
+                <%= link_to "Mot de passe oublié ?", new_password_path(:user), class:'link-password' %>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <div>
+                  <%= f.button :submit, "Connexion", class: "btn btn-kotch btn-blue btn-small-wide mr-2" %>
+                </div>
+                <div>
+                  <%= link_to "Inscription", new_user_registration_path, class: "ml-2 btn btn-kotch btn-ghost btn-small-wide" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-md-block card-buttons-home p-4">
+      <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+        <div class="form-inputs mb-5">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      label: false,
+                      aria: { label: 'adresse mail' },
+                      placeholder: "Adresse e-mail" %>
+          <%= f.input :password,
+                      required: false,
+                      label: false,
+                      aria: { label: 'mot de passe' },
+                      placeholder: "Mot de passe",
+                      wrapper_html: { class: 'mb-2' } %>
+          <%= link_to "Mot de passe oublié ?", new_password_path(:user), class:'link-password' %>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <div>
+            <%= f.button :submit, "Connexion", class: "btn btn-kotch btn-blue btn-small-wide mr-2" %>
+          </div>
+          <div>
+            <%= link_to "Inscription", new_user_registration_path, class: "ml-2 btn btn-kotch btn-ghost btn-small-wide" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row mt-0 mt-lg-5 h-100">
+    <div class="col-12 order-md-3 col-md-6 my-auto text-center text-md-left px-5">
+      <h2 class="home-subtitle">Vos séances de sport préférées et accompagnées par un coach</h2>
+      <p class='mt-4 home-text'>Il y en a pour tous les goûts, quel que soit votre niveau, vos envies ou capacités : Yoga, Pilate, Stretching, HIIT, Cross training, Fit boxing, Renforcement musculaire, CAF, Running.</p>
+    </div>
+    <div class="col-md-1 order-md-2"></div>
+    <div class="col-12 order-md-1 col-md-5 my-auto text-center px-5">
+      <div class="d-none d-md-block btn-kotch btn-md-lg btn-light-blue btn-home-1-top">HIIT</div>
+      <div class="d-none d-md-block btn-kotch btn-medium btn-red btn-home-1-middle">YOGA</div>
+      <div class="d-none d-md-block btn-kotch btn-medium btn-blue btn-home-1-bottom">FIT BOXING</div>
+      <%= image_tag "coach_sportif_souriant_et_a_votre_ecoute.png", alt: "Un coach sportif souriant et à votre écoute", loading: 'lazy', class:'image-radius image-contaiers-home' %>
+    </div>
+  </div>
+  <div class="row mt-5 h-100">
+    <div class="col-12 col-md-7 my-auto px-5 text-center text-md-right">
+      <h2 class="home-subtitle">Des séances en plein air qui s’adaptent à vos contraintes</h2>
+      <p class='mt-4 home-text'>Nous vous suivons où que vous alliez ! Accédez à une liste de lieux adaptés à votre sport, ou bien proposés par les membres de la communauté. Il ne vous reste plus qu’à programmer l'horaire souhaité !</p>
+    </div>
+    <div class="col-12 col-md-5 my-auto text-center px-5">
+      <div class="d-none d-md-block btn-kotch btn-md-lg btn-light-blue btn-home-2-top">LIEUX</div>
+      <div class="d-none d-md-block btn-kotch btn-md-lg btn-red btn-home-2-bottom">DATES</div>
+      <%= image_tag "femme_reservant_sa_seance_de_sport_sur_son_telephone.jpg", alt: "Une femme réservant sa séance de sport sur son téléphone", loading: 'lazy', class:'image-radius image-contaiers-home' %>
+    </div>
+  </div>
+  <div class="row mt-5 h-100">
+    <div class="col-12 order-md-2 col-md-7 my-auto px-5 text-center text-md-left">
+      <h2 class="home-subtitle">Partagez vos séances avec vos amis et vos collègues</h2>
+      <p class='mt-4 home-text'>Créez votre communauté de sportifs et profitez de la messagerie privée pour organiser au mieux vos séances.
+      <br>
+      <br>
+      Vous pouvez également rejoindre des séances publiques proposées par les membres de la communauté.</p>
+    </div>
+    <div class="col-12 order-md-1 col-md-5 my-auto text-center">
+      <%= image_tag "groupe_d_amis_prets_pour_leur_session_de_sport.png", alt: "Un groupe d'amis prêts pour leur session de sport", loading: 'lazy', class:'image-radius image-contaiers-home' %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col text-center mt-md-5">
+      <%= link_to "RÉSERVEZ VOTRE SÉANCE", new_lesson_path, class:"btn btn-kotch btn-red btn-big"  %>
+    </div>
+  </div>
+</div>

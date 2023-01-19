@@ -1,0 +1,111 @@
+h1 {
+  font-weight: 800;
+  color: $blue-kotch;
+}
+
+h2 {
+  font-weight: 600;
+  color: $blue-kotch;
+  font-size: 40px;
+}
+
+h3 {
+  font-weight: 400;
+  color: $gray;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+.text-blue {
+  color: $blue-kotch;
+}
+
+.text-light-blue {
+  color: $light-blue-kotch;
+}
+
+.text-light-blue:hover {
+  color: $light-blue-kotch;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-coral {
+  color: $coral-kotch;
+}
+
+.text-coral {
+  a {
+   color: $coral-kotch;
+  }
+}
+
+.text-coral {
+  a:hover {
+   color: $coral-kotch;
+  }
+}
+
+.text-gray {
+  color: gray;
+}
+
+.text-medium-gray {
+  color: #0E0000;
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-xbold {
+  font-weight: 800;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+.text-very-small {
+  font-size: 12px;
+}
+
+.text-condensed {
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.title-sport {
+  font-weight:600;
+  font-size:1.3rem;
+  color: $coral-kotch;
+  font-family: 'Barlow Condensed', 'sans-serif';
+}
+
+.bg-color-coral {
+  background-color: $coral-kotch;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.border-red {
+  border: 2px solid red;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-blue {
+  background-color: $blue-kotch;
+}

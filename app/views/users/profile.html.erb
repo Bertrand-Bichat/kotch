@@ -1,0 +1,23 @@
+<div class="d-block d-lg-none">
+  <%= render "profile_mobile" %>
+</div>
+<div class="d-none d-lg-block">
+  <%= render "profile_desktop" %>
+</div>
+
+
+<script>
+  tabs1 = document.querySelectorAll('.tab-1');
+  tabs2 = document.querySelectorAll('.tab-2');
+  tabs3 = document.querySelectorAll('.tab-3');
+
+  window.addEventListener('load', function () {
+    <% if @tab.present? && (@tab == 'tab-1') %>
+      tabs1.forEach(element => element.click());
+    <% elsif @tab.present? && (@tab == 'tab-2') %>
+      tabs2.forEach(element => element.click());
+    <% elsif @tab.present? && (@tab == 'tab-3') %>
+      tabs3.forEach(element => element.click());
+    <% end %>
+  })
+</script>

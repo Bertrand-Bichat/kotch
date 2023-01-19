@@ -1,0 +1,17 @@
+Bonjour <%= @user.first_name.capitalize %>,
+
+Voici un récapitulatif de toutes les séances que tu vas coacher dans les prochaines 24 heures :
+
+<% if @lessons.empty? %>
+    Aucune séance n'est prévue.
+<% else %>
+  <% @lessons.each do |lesson| %>
+    <%= lesson.sport_type %>, <%= lesson.date.localtime.strftime("le %d/%m/%Y à %k:%M") %> à l'adresse suivante : <%= lesson.location.name %>
+  <% end %>
+<% end %>
+
+Utilise la messagerie instantanée pour communiquer avec les participants !
+
+<%= link_to 'Mes coachings', lessons_url %>
+
+À très vite

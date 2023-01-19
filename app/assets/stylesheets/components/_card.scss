@@ -1,0 +1,253 @@
+.card-red {
+  border-radius: 24px;
+  background-color: $coral-kotch;
+}
+
+.card-blue {
+  border-radius: 24px;
+  background-color: $light-blue-kotch;
+}
+
+.card-dark-blue {
+  border-radius: 24px;
+  background-color: $blue-kotch;
+}
+
+.card-white {
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.card-white-friends {
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+}
+
+.card-blue-friends {
+  min-height: 70vh;
+  max-height: 70vh;
+  overflow: auto;
+
+  span {
+    font-size: 12px;
+    padding-left: 3.5em;
+  }
+}
+
+.card-new-lesson {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 100px){
+  .card-new-lesson {
+    min-height: 380px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card-new-lesson {
+    min-height: 565px;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .card-new-lesson {
+    min-height: 389px;
+  }
+}
+
+.lesson-cards {
+  overflow-x: hidden;
+}
+
+.card-kotch {
+  border-radius: 24px;
+  border: none;
+}
+
+.card-message {
+  min-width: 200px;
+  background-color: $light-blue-kotch;
+  border-radius: 50px;
+  padding-left: 1.5em !important;
+}
+
+.card-messages {
+  height: 75vh;
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  background-color: #F4F6FF;
+  background-size: cover;
+  position: relative;
+
+  .msg-cards-box {
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .msg-bar {
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+    right:0;
+
+    @include centerer(true,false);
+  }
+
+  form {
+    button:focus {
+      outline: none !important;
+    }
+  }
+}
+
+.card-header {
+  border-radius: 16px !important;
+  border: none;
+  background-color: $light-blue-kotch;
+}
+
+.card-subject {
+  border-radius: 16px
+}
+
+.lesson-max-325 {
+  width: 325px;
+}
+
+.lesson-max-150 {
+  width: 150px;
+}
+
+.lesson-max-100 {
+  width: 100px;
+}
+
+.lesson-max-60 {
+  width: 60px;
+}
+
+.card-dark-blue {
+  background-color: $blue-kotch;
+  p {
+    color: white !important;
+  }
+  .btn {
+    color: white !important;
+  }
+}
+.card-list-bookings-messages {
+  height: 85vh;
+  overflow: auto;
+}
+
+.card-offer {
+  position: relative;
+  height: 35em;
+  width: 19em;
+  background-color: $blue-kotch;
+  padding: 3em 0;
+  border-radius: 16px;
+  text-align: center;
+
+  .offer-content {
+    @include centerer(true, false);
+    z-index: 1000;
+    width: 75%;
+
+    h3, span {
+      color: white;
+    }
+  }
+
+  .offer-img-sm {
+    width: 32em;
+    z-index: 100;
+    position: absolute;
+    top: 15.5em;
+    right: -8em;
+  }
+}
+
+.card-offer-lightblue {
+  background-color: $light-blue-kotch;
+  overflow: hidden;
+
+  .offer-content {
+    // z-index: 1000;
+
+    h3, span {
+      color: $coral-kotch !important;
+    }
+  }
+
+  .offer-img-bg {
+    width: 28em;
+    z-index: 100;
+    position: absolute;
+    top: 13em;
+    right: -4.5em;
+  }
+}
+
+// .card-payment {
+//   height: 40vh;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   background-image: image-url('background1.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+// }
+
+.card-pay-content {
+  @include centerer(true,true);
+}
+
+.card-order-content {
+  @include centerer(true,true);
+}
+
+.card-offer-enterprise {
+  position: relative;
+  height: 37em;
+  width: 19em;
+  background-color: $light-blue-kotch;
+  padding: 3em 0;
+  border-radius: 16px;
+  text-align: center;
+
+  .offer-content {
+    @include centerer(true, false);
+    z-index: 1000;
+    width: 75%;
+
+    h3 {
+      color: $blue-kotch;
+      font-size: 2rem;
+    }
+
+    span {
+      color: $blue-kotch;
+      font-size: 1.25rem;
+    }
+  }
+
+  .btn-white-offer {
+    font-size: 30px;
+  }
+
+  .offer-img-sm {
+    width: 32em;
+    z-index: 100;
+    position: absolute;
+    top: 15.5em;
+    right: -8em;
+  }
+}

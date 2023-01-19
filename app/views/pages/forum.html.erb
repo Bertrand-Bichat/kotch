@@ -1,0 +1,25 @@
+<% canonical(forum_url) %>
+<% content_for :meta_title, "Koach & Co | Forum" %>
+<% content_for :meta_description, "Un avis, une remarque, une demande ? Exprimez vous directement sur la page Forum afin de partager et d'échanger avec la communauté Koach & Co." %>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h1 class='text-blue text-condensed text-center'>FORUM</h1>
+      <div class="d-flex justify-content-end mb-4 text-bold text-condensed text-coral">
+        <%= link_to "+ commencer une nouvelle discussion", new_subject_path, class:''  %>
+      </div>
+      <% @subjects&.each do |subject| %>
+        <div class="card-subject shadow p-3 text-blue">
+          <div class="d-flex align-items-center">
+            <%= cl_image_tag subject.user.profile_picture, class:'avatar-extra-small mr-2' %>
+            <p class='mb-0'><%= subject.user.first_name %></p>
+          </div>
+          <h6><%= subject.title %></h6>
+          <p class='mb-0'><%= subject.content %></p>
+          <%= link_to "Voir plus", subject_path(subject)  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,211 @@
+a:focus {
+  outline:0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+a {
+  color: $blue-kotch;
+}
+
+a:hover {
+  color: $blue-kotch;
+}
+
+.btn-kotch {
+  border-radius: 8px;
+  font-family: "Barlow Condensed";
+  font-weight: 600;
+}
+
+.btn-transparent {
+  padding: 0px;
+  color: $blue-kotch;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+}
+
+.btn-transparent:hover {
+  color: $blue-kotch;
+  text-decoration: underline;
+}
+
+.btn-big {
+  font-size: 24px;
+  padding: 24px 16px;
+}
+
+@include media-breakpoint-up(md) {
+  .btn-big {
+    font-size: 32px;
+    padding: 24px 16px;
+  }
+}
+
+.btn-md-lg {
+  font-size: 30px;
+  padding: 12px 16px;
+}
+
+.btn-medium {
+  font-size: 24px;
+  padding: 10px 16px;
+}
+
+.btn-small-wide {
+  font-size: 24px;
+  padding: 12px 24px;
+}
+
+.btn-small-narrow {
+  font-size: 24px;
+  padding: 12px 8px;
+}
+
+.btn-extra-small {
+  font-size: 14px;
+  padding: 12px 12px;
+}
+
+.btn-extra-small-narrow {
+  font-size: 12px;
+  padding: 4px;
+}
+
+.btn-blue {
+  background-color: $blue-kotch;
+  color: white;
+}
+
+.btn-light-blue {
+  background-color: $light-blue-kotch;
+  color: $blue-kotch;
+}
+
+.btn-light-blue:hover {
+  color: white;
+}
+
+.btn-red {
+  background-color: $coral-kotch;
+  color: white;
+}
+
+.btn-red:hover {
+  color: $light-blue-kotch;
+}
+
+.btn-blue:hover {
+  color:$light-blue-kotch;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: $light-blue-kotch;
+  border: 3px solid $light-blue-kotch;
+}
+.btn-ghost:hover {
+  color: $blue-kotch;
+  border: 3px solid $blue-kotch;
+}
+
+.btn-ghost-blue {
+  background-color: transparent;
+  color: $blue-kotch !important;
+  border: 2px solid $blue-kotch;
+  font-weight: 500;
+}
+
+.small-link {
+  color: $blue-kotch;
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.pill {
+  font-size: 0.75rem;
+  padding: 8px 12px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.pill-red {
+  background-color: $coral-kotch;
+}
+
+.pill-green {
+  background-color: #2DFFBE;
+}
+
+.pill-enterprise {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.pill-enterprise-red {
+  background-color: red;
+}
+
+.pill-enterprise-green {
+  background-color: green;
+}
+
+.pill-fixed-size {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-deco-none:hover {
+  text-decoration:none !important;
+}
+
+.btn-white {
+  background-color: white;
+  color: $blue-kotch;
+}
+
+.btn-white-offer {
+  font-size: 38px;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 6px 6px 18px 5px rgba(0,0,0,0.22);
+}
+
+.btn-red-offer {
+  font-size: 24px;
+  padding: 10px 30px;
+  box-shadow: 6px 6px 18px 5px rgba(0,0,0,0.22);
+}
+
+.btn-plus,
+.btn-plus:hover,
+.btn-plus:focus,
+.btn-plus:active {
+  background-color: transparent;
+  color: $blue-kotch;
+  border: none;
+}
+
+.hover-underline:hover {
+color: $light-blue-kotch;
+}
+
+.btn-small {
+  font-size: 1rem;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+.dropdown-item {
+  padding: 0.25rem;
+}
